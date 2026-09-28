@@ -1,0 +1,219 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #e5eefb;
+  background: #081423;
+  line-height: 1.5;
+  font-weight: 400;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #07111f 0%, #0d1c2a 100%);
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+.app-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  color: #72b8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.live-pill {
+  background: rgba(43, 197, 126, 0.18);
+  border: 1px solid rgba(43, 197, 126, 0.4);
+  color: #7de9b6;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.summary-card, .panel {
+  background: rgba(13, 28, 42, 0.9);
+  border: 1px solid rgba(130, 179, 235, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.summary-card {
+  padding: 18px 20px;
+}
+.summary-card span {
+  display: block;
+  color: #9bb3d2;
+  font-size: 0.82rem;
+  margin-bottom: 8px;
+}
+.summary-card strong {
+  font-size: 2rem;
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+.panel {
+  padding: 18px;
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.panel-header h3 {
+  margin: 0;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(151, 170, 197, 0.2);
+}
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  border: 1px solid transparent;
+}
+.badge-warning {
+  background: rgba(245, 180, 58, 0.12);
+  border-color: rgba(245, 180, 58, 0.35);
+  color: #f7d678;
+}
+.badge-info {
+  background: rgba(67, 164, 255, 0.12);
+  border-color: rgba(67, 164, 255, 0.4);
+  color: #90d2ff;
+}
+.badge-muted {
+  background: rgba(180, 192, 214, 0.1);
+  border-color: rgba(180, 192, 214, 0.18);
+  color: #d7e2f3;
+}
+button.secondary, button.success, button.danger {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+button.secondary {
+  background: rgba(101, 123, 255, 0.12);
+  border-color: rgba(101, 123, 255, 0.35);
+  color: #c9d6ff;
+}
+button.success {
+  background: rgba(54, 199, 130, 0.14);
+  border-color: rgba(54, 199, 130, 0.36);
+  color: #9ae5be;
+}
+button.danger {
+  background: rgba(255, 95, 95, 0.12);
+  border-color: rgba(255, 95, 95, 0.3);
+  color: #ffb6b6;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.queue-item {
+  border: 1px solid rgba(180, 192, 214, 0.2);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(9, 19, 28, 0.8);
+}
+.queue-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.item-type {
+  display: inline-block;
+  margin-right: 8px;
+  color: #86d9ff;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.queue-item p, .queue-item small {
+  color: #c3d1e3;
+  margin: 6px 0;
+}
+.suggestion-details {
+  margin: 12px 0 8px;
+  color: #a7c6ef;
+  font-weight: 600;
+}
+.actions-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.empty-state {
+  padding: 24px 12px;
+  text-align: center;
+  color: #91a4be;
+}
+.loading-shell {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dfe9f7;
+  font-size: 1.25rem;
+}
+.error-banner {
+  margin-bottom: 18px;
+  background: rgba(204, 63, 63, 0.14);
+  border: 1px solid rgba(204, 63, 63, 0.35);
+  color: #ffd0d0;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+@media (max-width: 900px) {
+  .content-grid, .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
